@@ -149,6 +149,31 @@ To account for complex variables (free-air gravity, geodetic data), we present a
 
 To investigate spatial variations of the earthquake events, the ‘psxy’ module of GMT was used for visualization of the events. Technically, the procedure was performed by reading the (x,y,z) triplets derived from the file in .ngdc format and visualized by the code that plots symbols at the coordinate locations, as follows: ‘gmt psxy -R -J quakes\_PA\_s.ngdc -Wfaint -i4,3,6,6s0.05 -h3 -Scc -Csteps.cpt -O -K >> \$ps’. The earthquake events were plotted using the '-Sc' flag that visualises circles with the size given as the diameter of the circle signifying the magnitude of the earthquake. The specification of the code was applied from the GMT manual, and the IRIS file was visualized as the converted table (.ngdc), to determine all the earthquakes. The magnitude and spatial variability of the earthquakes was indicated in the ‘-i4,3,6,6s0.05’ flag that signifies the numbers of columns in the table with the following names, respectively: Year, Month, Day, Lat, Lon, Depth, Mag. 
 
+\subsubsection{Advantages and robustness}
+As demonstrated above, the algorithm approach of scripts by GMT is largely based on using its syntax, which is very similar to the programming languages \cite{Lemenkov202103,Lemenkov202107}. The lines of codes perform operations controlling the appearance of the cartographic elements on the maps and form a script  six maps plotted in PS format converted to JPG and presented in Figures \ref{fig:01} to \ref{fig:06}. Apart from the traditional JPG and GMT standard netCDF format, it recognises a variety of miscellaneous grid formats, such as SUN, GEODAS, ASCII, AGC, Surfer and data capture via GDAL. Using GMT for mapping lead to a higher quality of the produced maps, and lower time required for workflow due to the reduced time required for scripting, compared to the cumbersome and time-consuming data processing in GIS. Thus, in contrast to GIS, GMT presents a free set of command-line tools and options for processing of geographic data in both raster and vector formats.
+
+\section{Results}
+
+Different types of maps containing the visualization of complex geophysical parameters of Panama, 2D and 3D modelling, the effects from the geoid on elevation heights and seismicity were rendered  using the GMT modules. The color distribution palettes were adjusted to each of the maps and implemented using embedded CPTs, so the colors were produced and selected to best indicate the variability in the studied parameters. 
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.99\linewidth]{figures/fig_04.jpg} 
+\end{center}
+\caption{Seismicity in Panama based on the IRIS database (1970-2021). Map source: author.}
+\label{fig:04}
+\end{figure}
+
+We compared the topographic map and the geoid model and found that the exceptionally high values of geoid (Figure \ref{fig:03}) can be seen in the high mountainous regions of the Panama (values 17–20 m in the region of Cordilliera de Talamanca, southern coast of Peninsula de Azuero and easter regions of Panama, 77.5°-78.5°W). This well corresponds to the topographic roughness in the highlands. In contrast, negative values of geoid can be seen over the Caribbean Sea basin in the north (from -4 to 0 m). High resolution mapping of the seismicity (Figure \ref{fig:04}) revealed 1740 individual seismic events in Panama located at various depths. The earthquakes had different magnitudes and spatial location. A notable concentration of the earthquakes is seen in the western region of the Panama's shelf waters (~82°-83.5W), and on the border with Colombia (~77-78.5°W). The earthquakes vary by magnitudes from 2.9 to 7.8 at the depths from 0 (shallow earthquakes) to 225 m (near the west coast of Colombia), that are traceable from the IRIS seismicity website and visualised in this study using the GMT (Figure \ref{fig:04}).
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.99\linewidth]{figures/fig_05.jpg} 
+\end{center}
+\caption{Free-air gravity anomaly visualized from the GMT console. Map source: author.}
+\label{fig:05}
+\end{figure}
+
 %=====================================
 % References: external bibliography
 %=====================================
