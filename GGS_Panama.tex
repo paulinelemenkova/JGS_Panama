@@ -31,377 +31,59 @@
 
 \DOI{DOI}
   \startpage{1}
-  \received{..}
+  \received{23 August 2022}
   \revised{..}
   \accepted{..}
 
-  \journalyear{2014}
+  \journalyear{2022}
   \journalvolume{x}
   \journalissue{x}
- 
-
-
- 
 
 \maketitle
-\section{About}
 
-Journal of Geodetic Science is a new, peer-reviewed, electronic-only journal that pulishes original, high-quality research of topics broadly related to Geodesy. The journal focuses on theoretical and application papers with especial attention to young scientists. 
+\section{Introduction}
+This article introduces a series of new maps of Panama prepared using scripting practical approach of Generic Mapping Tools (GMT). The aim is to visualise high-resolution geophysical, topographic and seismic data for analysis of their correlations. The main technical advantage of scripts consists in the repeatability. Thus, such maps can be easily fabricated for other regions of Latin America using GMT and similar datasets, and then assembled through a sequence of GMT codes that regulate the appearance of maps through modules and operations. Compared to previous approaches of using GMT \citep{McNamara,Kobayashi,Cleveland} we presented the scripts in full availability for the reuse in future studies. As some of the recent papers have shown \citep{4814952,Lewis,Zhangetal2017,Eakin} GMT is an excellent instrument for semi-automatic mapping of the geophysical variables.
 
+\subsection{Background}
+Novel cartographic technologies have been rapidly developed over the last decades to support spatial data analysis in marine and Earth sciences. Mapping exploits a wide variety of of theoretical principles and practical techniques to create real-world tangible reproductions of Earth models. A special application of mapping techniques including cartographic scripts used for geographical data processing of Panama. 
 
+As a response to the needs for high-quality mapping of the regions in seismic risk, such as Central America, the presented approach provides an open source solution of GMT-based standardised cartographic techniques employed for mapping seismicity, topography and geophysical grids. Although the proposed scripting approach requires, to some extent, advanced skills in geospatial programming, GMT can be considered as an alternative method to GIS in terms of mapping and cartographic visualization. Thus, this approach could be beneficial in spatial analysis of geophysical setting over Central American region, such as seismicity and hazard risk assessment, where visualization of high-resolution spatial data is a key part of research.
 
+From the point of view of geospatial applications, using GMT provides a novel formalism in spatial data processing to design a series of maps with identical parameters for comparability and compatibility. This coding formalism provides enough degree of freedom to map geophysical and seismic maps for hazard analysis in Panama -- a key transport region of Central America. Consequently, it enables to efficiently model 2D and 3D datasets that characterises the topography of the Earth. The systematic reuse of scripts has been applied from modular techniques of GMT and adjusted to the particular datasets within the framework of this project. Additionally, this study applies standard GMT coding, to achieve unification of maps through the development of scripts, integration of data and implementation of GMT modules using its standard syntax in a cartographic practice.
 
-\section{Publication formats}
+\subsection{Motivation}
+Probably the most well-know tools for cartographic visualization and spatial analysis is Geographic Information System (GIS) \citep{Longley,Harvey}. While initially the range of GIS was very limited with restricted functionality, modern technologies enable a wide range of techniques to be used. Currently, besides creating maps, GIS enable to manipulate, organise, and display spatial information \citep{LAMONT1997469}. The cartographic tasks include terrain analysis, topology, generalisation, spatial analysis, data formatting, projecting, gridding, spatial clipping, overlay, logical queries,  extracting data, raster to vector conversion, map design, and many more. 
 
-Journal of Geodetic Science  considers submissions of: 
-\begin{itemize}
-\item Research Articles,
-\item Communications,
-\item Rapid Communications*, 
-\item Reviews, and Commentaries 
-\item Letters to the Editor, 
-\item Erratum, 
-\item Retraction Note.
-\end{itemize} 
-*Rapid  Communications  are  intended  to  present  information  of  exceptional  novelty  and  exciting  results of significant interest to the readers. Authors are asked to provide an  explanation in the cover  letter why their contribution should be handled via the rapid channel.
+At the same time, the algorithms of mapping have been improved substantially along with the increase and precision of available open spatial data. Consequently, mapping accuracy in terms of reproduction has reached high cartographic standards. Nevertheless, using commercial GIS is perceived as being too expensive for the standard users, while open source GIS may have restricted functionality. Moreover, the input data have to satisfy certain geospatial characteristics (data formats, resolution, coverage and compatibility), in order to produce reliable high-quality maps representing the models of the geospatial phenomena and processes on the Earth.
 
+Decades ago, principally new paradigms for cartographic data processing and mapping were proposed through scripting \citep{WesselSmith1998,Neteler2004,Neteler2008}. The main idea of using scripts in cartography was to drastically automate, and thus, to simplify, the overall mapping procedure by fabricating programming scripts for plotting maps, which would enable repeatability and precision of mapping. This class of methods os principally different from GIS since it relies on a simple concept: every step in a mapping process is fully controlled by the lines of code, written according to the syntax of embedded language. In such a way, hidden obstacles and bugs, often in traditional GIS, are overcome and avoided, and the complete procedure of mapping is radically improved.
 
-\section{Electronic submission}
+\subsection{Contribution}
+In this study, the GMT methods were applied and redesigned for mapping Panama in order to demonstrate the efficient digital series of maps on geophysical, topographic and seismic parameters of the territory of the country. Thus, this study proposes an updated strategy of using scripts to plot illustrative visualisations of topographic and geophysical setting of the country using high-resolution recent data. Furthermore, this paper extends the classical GIS workflow of mapping by integrating programming methods of data processing in geographical studies. In addition, the designed of map in the presented series was formulated using GMT scripts, to achieve the high map printing quality in a novel, structurally sound perspective of cartographic workflow. We have demonstrated how GMT syntax can be exploited to efficiently represent complex geophysical models of the terrain. 
 
-All  submissions  must  be  made  via  online  submission  system  Editorial  Manager.  Manuscripts 
-submitted  under multiple authorship  are  reviewed on  the  assumption  that  all  listed  authors concur  in  the  submission  and  are  responsible  for  its  content;  they must  have  agreed  to  its  publication  and  have given the corresponding author the authority to act on their behalf in all matters pertaining to  publication.  The  corresponding  author  is  responsible for  informing  the coauthors  of  the  manuscript  status throughout the submission,  review, and production process.
+Thus, using GMT, we proposed an efficient strategy of mapping to visualise several geophysical variables using different datasets in a united series of maps. In addition, the GMT mapping method also takes into account both 2D and 3D data visualization, which has been demonstrated in this article. the presented scripting method can be used for analysis of correlations between the data for showing various continuous fields on compatible maps to take advantage of data comparison for a better perception of links and association among the geophysical and topographic parameters. In such a way, this articles presents an automated procedure of mapping to ensure that quality of maps.
 
+\section{Related Works}
+Accurate cartographic visualization has been a long-standing challenge in marine science and oceanic engineering, particularly when the data and materials vary according to different data sources, resolution, and spatial extent. The wide range of geographic datasets poses a great challenge for mapping approaches due to their different functionality: desktop GIS, remote sensing GIS, server GIS and so on \citep{STEINIGER2013136}. Therefore, selecting suitable GIS program is important prior to mapping, since the functionality of program may affect the spatial analysis and limit cartographic techniques. A complete review of various GIS is beyond the scope of this article. We refer the read to the for a comprehensive survey on available free GIS \citep{LEIDIG201549,CHEN2010253}, recent trends in the development of cartography \citep{WangFu} and new directions and perspectives in GIS \citep{Lietal2022,DUBE2022661}, while this section only covers the most relevant GIS applications for environmental mapping.
 
-\subsection{Electronic formats allowed}
+Many existing algorithms of data processing are available only in certain programs and software. For example, some well-know commercial Geographic Information System (GIS) are focused on bitmap or LiDAR data processing. The efficient solutions are presented by ERDAS Imagine with multiple applications of image processing of Panama \citep{Guzman,SANCHEZAZOFEIFA20092076,PORTILLOQUINTERO2010144}
+The Global Mapper GIS, includes a variety of tools including LiDAR handling, 3D rendering, watershed delineation. It is developed by the USGS U.S. survey, a provider of geological and environmental data, used in studies of Panama \citep{WALKER2021105632,HOPP2016187,ODEA201259}. 
 
-We  accept  submission  of  text,  tables  and  figures  as  separate  files  or  as  a  composite  file.  For  your  initial submission, we recommend you upload your entire manuscript, including tables and figures, as a single PDF file. If you are invited to submit a revised manuscript, please provide us with individual  files: an editable text and publication-quality figures.
+Probably the most-well known and widely distributed commercial GIS is the ArcGIS which perform well both for vector and raster data including LiDAR \citep{HIGGINS2014358}, Landsat TM images processing \citep{SESNIE20082145}, deforestation analysis of mangroves ecosystems \citep{LOPEZANGARITA201882,MEJIARENTERIA2018233}, analysis of traffic in the Panama Canal and conservation \citep{GUZMAN2020104113,DARIEN2021105490,ROMPRE2008129} and hydrological basin analysis, due to the extensive spatial modelling tools available in the ArcGIS \citep{SALGADO2020138444,PEREZCONSUEGRA2021107590}. The Geomedia GIS software, developed by the Hexagon Geospatial, was a concurrent for the ArcGIS for a long period, mostly used for cadastral mapping, landscape and terrain analysis and spatial modelling for geomorphometry tasks \citep{KLINGSEISEN2008109}. The analysis of tropical environment, marine reserves and coral reef can be supported using the MapInfo functionality for superimposing maps on the aerial photographs \citep{Chapman} or data formatting in resilience studies \citep{HERMIDA2017467}.
 
-Text files can be submitted in the following formats: MS Word  - standard DOCUMENT (.DOC) or RICH  TEXT FORMAT (.RTF); PDF (not applicable for resubmitted or accepted manuscripts, see below).
+However, all these proprietary programs are restricted to the licence availability for usage. Such software products work well in business enterprises and commercial organisations with available market license. This becomes increasingly inefficient for many research cases, such as educational workspace, private-run business or mapping for personal needs. In such cases, using open source program for processing geographic data is required for effective workflow. Existing examples of mapping Panama using open source available are presented by QGIS \citep{VARDEMAN2020e01098,Bennett,YAMADA201642} which is a most inventive open source GIS competitive to the ArcGIS in functionality and availability of plugins. Advanced software GRASS GIS achieves attention in environmental mapping owing to the variety of function that can be applied in geological and topographic mapping \citep{Lemenkova202125}. Using ILWIS GIS is often applied for satellite image processing and Diva GIS may be used for vegetation mapping. The examples of using SAGA GIS for mapping Panama include forest dynamics with time series of land cover types \citep{WALKER2020102029}, sensitivity analyses of performance parameters in energy studies \citep{VERA20201399}, or LiDAR-based spatial analysis of tropical landscapes \citep{GRAVES201832}.
 
-Tables  should  be  submitted  as  MS  Word  or  PDF  (not  applicable  for  resubmitted  or  accepted  manuscripts, see below). Please note that a straight Excel file is not an acceptable format.
+Nevertheless, the available GIS programs, briefly reviewed above, have significant limitations and may be efficient for certain operations only, while restricted for automatic and complex spatial data analysisc and visualization. This is mainly because these programs are designed for special needs of geographical data analysis, but perform poorly or none when programming scripts are required for large data processing. Another case of concern is regarded to the origin of data and materials, which may be captured from multiple sources, have diverse projections and resolution. The combination of these tools in one research for dividing research tasks is cumbersome and not always convenient, which raises up the question of the console-based program for spatial data analysis and mapping, which has a more flexibility in mapping process. This is achieved in Generic Mapping Tools (GMT), owing to the embedded syntax of the programming language, which is used for preparing maps in this study, as demonstrated below.
 
-Graphics files  can be  submitted in any of the following graphic formats: EPS;  BMP; JPG; TIFF; GIF or  PDF. Please note that Powerpoint files are not accepted.
+\section{Study Area}
 
-Any  articles  that  have  been  prepared  in  LaTeX  will  be  accepted  for  review,  but  only  in  PDF  format. 
-Post-acceptance,  text  files  of  the  revised  manuscript  and  tables  are  required  for  use  in  the  production.  Authors  should  clearly  indicate  the  location(s)  of  tables  and  figures  in  the  text  if these  elements are given separately or at the end of the manuscript. If this information is not provided to  the editorial office, we will assume that they should  be left at the end of the text.
+Panama is an important region of Central America and a transatlantic key transport hub. Therefore, it presents interest both for economists and geographers (Figure \ref{fig:01}). The Panama Canal plays a key economic role, connecting transshipment hub of the world maritime trade. It has one of the busiest traffic density in Latin America \cite{Rodrigue,RodrigueAshar}. However, the region is located in active tectonic area with high seismicity which affects topographic and environmental setting. The anthropogenic effects include intensive industrial activities which results in river damming, forest flooding, species invasion, salt intrusions, chemical pollution \cite{Salgado} and deforestation \cite{Oestreicher}. Regional tectonic and geological setting result in active construction works, hydroelectric potential, mineral resource exploration \cite{Palacio,Corral}. 
 
-\subsection{First-time submission of manuscripts}
-
-It  is  important  that  authors  include  a  cover  letter  with  their  manuscript.  Please  explain  why  you  consider  your  manuscript  to  be  suitable  for  publication in  Journal of Geodetic Science,  why  your  paper  will  inspire the other members of your field, and how will it drive research forward.
-The letter should contain all important details such as:
-\begin{itemize}
-\item your full name (submitted by)
-\item full title of article and short title
-\item full list of authors with affiliations
-\item e-mail of the corresponding author
-\item contact address, telephone/fax numbers of the corresponding author
-\item number of attached files, if there is more than one
-\item status: new, reviewed or accepted (with reference ID if reviewed or accepted)
-\end{itemize}
-The  cover  letter  should  explicitly  state  that  the  manuscript  (or  one  with  substantially  the  same  content, by any of the authors) has not been previously published in any language anywhere and that  it  is  not  under  simultaneous  consideration  or  in  press  by  another  journal.  If  related  work  has  been  submitted,  then  we  may  require  a  preprint  to  be  made  available.  Reviewers  will  be  asked  to  comment  on  the  overlap  between  the  related  submissions.  Manuscripts  that  have  been  previously rejected,  or  withdrawn  after  being  returned  for  modification,  may  be  resubmitted  if  the  major  criticisms  have  been  addressed.  The  cover  letter  must  state  that  the  manuscript  is  a  resubmission, and the former manuscript number should be provided. 
-
-
-To  ensure  fair  and  objective  decision-making,  authors  must  declare  any  associations  that  pose  a  conflict of interest in connection with evaluated manuscripts (see Editorial Policy for details). Authors  may  suggest  up  to  two  referees  not  to  use,  and  in  such  cases additional  justification  should  be  provided in the cover letter. Authors are encouraged to recommend up to five reviewers who are not  members  of  their  institution(s)  and  have  never  been  associated  with  them  or  their  laboratory(ies);  please  provide  contact information  for  suggested  reviewers.  The  Editors  reserve  the  right  to  select  expert reviewers at their discretion.
-
-\subsection{Submission of revised articles}
-
-Resubmitted manuscripts  should  be  accompanied  by  a  letter  outlining  a  point-by-point  response  to
-Editor's and reviewers' comments and detailing the changes  made  to the manuscript. A copy of the 
-original manuscript  should be  included for comparison if the Journal Editor requests one. If it is the 
-first  revision,  authors  need  to  return  the  revised  manuscript  within  28  days;  if  it  is  the  second  revision,  authors  need  to  return  the  revised  manuscript   within  14  days.  Additional  time   for  resubmission  must  be  requested  in  advance.  If  the  above  mentioned  deadlines  are  not  met,  the  manuscript will be treated as a new submission.
-
-For resubmitted manuscripts, please provide us with an editable text and publication-quality figures: 
-Tables also need to be included within an editable article file or be submitted separately as editable  files. Supply any figures as separate high-resolution, print-ready digital versions.
-
-In  addition  to  the  editorial  remarks,  authors  are  asked  to  take  care  that  they  have  prepared  the revised version according to the Journal's style. Please  adopt  numbered citation (citatio-sequence)  style referencing.
-
-\section{Preparation of manuscripts}
-
-It   is   essential   that   contributors   prepare   their   manuscripts   according   to   the   instructions   and  specifications presented below.
-
-
-\subsection{General rules for writing}
-
-The work must demonstrate its novelty, importance to the field of animal migration and its interest  to biologists in general. Conclusions must be justified by the study; please make your argumentation 
-complete and be self-critical as you review your drafts.
-
-Journal of Geodetic Science  encourages  the  submission  of  both  substantial  full-length  bodies  of  work  and shorter  manuscripts  that  report  novel  findings  that  might  be  based  on  a  more  limited  range  of experiments.  There  are  no  specific  length  restrictions  for  the  overall  manuscript  or  individual sections;  however,  we  urge  the  authors  to  present  and  discuss  their  findings  in  aconcise  and accessible manner.
-
-Use  simple,  declarative  sentences  and  commonly  understood  terms;  avoid  long  sentences  and   idle words. Please use active voice while writing your manuscript; e.g. ‘we measured snout-vent length’ rather than ‘snout-vent length was measured. We recommend that for clarity you use the past tense  to narrate particular events in the past, including the procedures, observations, and data of the study that  you  are  reporting.  Use  the  present  tense  for  your  own  general  conclusions,  the  conclusions  of previous researchers, and generally accepted facts. Thus, most of the Abstract, Methods, and Results  should be in the past tense, and most of the Introduction and some of the Discussion should be  in the present tense. Editors may make suggestions for how to improve  clarity and readability, as well  as to strengthen the argument. 
-
-\subsection{Organization of the manuscript}
-\begin{itemize}
-\item Title page with: Title  (and running title) 
-\item  Abstract 
-\item Keywords 
-\item Introduction 
-\item Methods 
-\item Results 
-\item Discussion 
-\item  Acknowledgments 
-\item References 
-\item Figure Legends and Table Captions 
-\item Tables 
-\item Figures 
-\item  Supplemental data (if applicable) 
-\end{itemize}
-
-Each  of  these  elements  is  detailed  below.  We draw  particular  attention  to  the  importance  of carefully  preparing  the  title,  keywords  and  abstract,  as  these  elements  are  indicators  of  the 
-manuscript content in bibliographic databases and search engines. 
-
-\subsection{Title}
-
-We  suggest  the  title  should  be  informative,  specific  to  the  project,  yet  concise  (75  characters  or fewer).  Please  bear  in  mind  that  a  title  that  is  comprehensible  to  a  broad  scientific  audience  and readers  outside  your  field  will  attract  a  wider  readership.  Avoid  specialist  abbreviations  and  non-standard  acronyms.  Titles  should  not  be  presented  in  title  case  (words  should  not  be  capitalized). Please also provide a brief "running title" of not more than 50 characters.
-
-
-
-\subsection{Authors, affiliations, addresses}
-In  the  cover  letter,  provide  the  first  names  (or  initials - if  used), middle  names  (or  initials 
-- if  used),  and surnames for all authors. Affiliations should include: 
-\begin{itemize}
-\item Department 
-\item University or organization 
-\item City 
-\item Postal code 
-\item State/province (if applicable) 
-\item Country 
-\end{itemize}
-
-One  of  the  authors  should  be  designated  as  the  corresponding  author  to  whom  inquiries  regarding the paper should be directed. It is the corresponding author's responsibility to ensure that the author  list  and  the  summary  of  the  author  contributions  to  the study  are  accurate  and  complete.  Place  an asterisk  after  the  name  of  the  corresponding  author  and  provide  us  with  a  valid  e-mail  address. 
-Please  note  that  a  change  in  authorship  (order  of  listing,  addition  or  deletion  of  a  name,  or 
-corresponding author designation) after submission of the manuscript will be implemented only after 
-receipt  of  signed  statements  of  agreement  from  all  parties  involved.  Footnotes  can  be  used  to  present additional information (for example: permanent, adequate, present postal addresses). If the  article has been submitted on behalf of a consortium, all consortium members and affiliations should be listed after the Acknowledgments. 
-
-
-
-
-\subsection{Abstract and image accompanying abstract}
-
-The abstract should not exceed 200 words. The abstract should  give a summary of the content of the 
-paper and is usually conceptually divided into: Background, Methodology, Principal Findings/Results, 
-and Conclusions/Significance. Mention the techniques used without going into methodological detail 
-and summarize briefly the most important items of the paper. Please do not include any citations or 
-references to tables or figures, and avoid specialist abbreviations and symbols. Because the abstract 
-will be published separately by abstracting services, it must be complete
-and understandable without reference to the text.
-
-Authors  may  provide  a  striking  image  to  accompany  their  article,  if  one  is  available.  If  the  image (photo, graph, scheme) is judged by the editors to be suitable for publication, it may be featured on the web to highlight the paper online. It is preferable, but not essential, that these should be related strictly to the subject  reported in the manuscript. The image  could originate  from the  experimental findings  reported  in  the  manuscript  but  does  not  haveto  constitute  a  part of  the  original  work  and need  not  be  reprinted  in  the  article.  Images  must  be  original  and  should  be  submitted  as  separate files.
-
-
-\subsection{Keywords}
-
-List  keywords  for  the  work  presented  (maximum  of  10),  separated  by  commas.  We  suggest  that  key words do not replicate those used in the title. Authors should use keywords that are specific and  emphasize what is essential in the presented study. 
-
-
-\subsection{Introduction}
-
-The  introduction  should  put  the  focus  of  the  manuscript  into  a  broader  context  and  should  supply sufficient  background  information  to  allow  the  reader  to  understand  and  evaluate  the  results without  referring  to  previous  publications  on  the  topic.  As  you  compose  the  introduction,  think  of readers who are not experts in this field. Include a brief review of the key literature - use only those references required to provide the most salient background rather than an exhaustive review of the topic. Relevant controversies or disagreements in the field should be mentioned so that a non-expert reader can delve  into these  issues  further. The  introduction should conclude  with a brief statement of  the  rationale  for  the  study,  the  hypothesis  that  was  addressed  or  the  overall  purpose  of  the  experiments reported  and should provide a comment about whether that aim was achieved.
-
-\subsection{Methods}
-
-This  section  should  include   sufficient  technical  information  to  enable  the  experiments  to  be 
-reproduced.  Protocols  for  new  methods  or  significant  modifications  to  existing  methods  should  be included,   while   previously   published   or wellestablished   protocols   should   only   be   referenced. 
-Describe  new  methods  completely  and  give  sources  of  unusual  chemicals,  equipment,  strains  etc.  Studies  presented  should  comply  with  our  recommendations  for  distribution  of  materials  and data  (see below). In theoretical papers comprising the computational analyses, technical details (methods, models  applied  or  newly  developed)  should  be  provided  to  enable  the  readers  to  reproduce  the calculations. 
-
-\subsection{Results}
-
-This section should provide statistical analyses of all of the experiments that are required to support 
-the  conclusions  of  the  paper.  Reserve  extensive  interpretation  of  the  results  for  the  Discussion 
- section. Details of experiments that are peripheral to the main thrust of the article and that detract 
-from  the  focus  of  the  article  should  not  be  included.  Present  the  results  as  concisely  as  possible  in text,  table(s),  or  figure(s)  (see  below).  Avoid  extensive  use  of  graphs  to  present  data  that  might  be more concisely presented in the text or tables. Graphs illustrating methods commonly used need not be shown except in unusual circumstances. Limit photographs to those that are absolutely necessary to show the experimental findings. Number figures and tables in the order in which they are cited in the  text,  and  be  sure  to  cite  all  figures  and  tables.  Styles  and  fonts  should match  those  in  the main body of the article. Large datasets, including raw data, should be  submitted as supporting files. The section may be divided into subsections, each with a concise sub heading.
-
-
-\subsection{Discussion}
-
-The  Discussion  should  provide  an  interpretation  of  the  results  in  relation  to  previously  published work and to the experimental system used. It should not contain extensive repetition of the Results or  reiteration  of  the  Introduction. This  section  should  spell  out  the  major  conclusions  of  the  work along with some  explanation or speculation on the significance  of these  conclusions. The discussion should be concise and tightly argued. 
-
-\subsection{Acknowledgments}
-
-This  section  should  describe  sources  of  funding  that  have  supported  the  work. Please  also  describe the  role  of  the  study  sponsor(s),  if  any,  in  study  design;  collection,  analysis,  and  interpretation  of data;  writing  of  the  paper;  and  decision  to  submit  it  for  publication.  Recognition  of  personal assistance should be given as a separate paragraph: people who contributed to the work, but do not fit  the  criteria  for  authors  should  be  listed  along  with  their  contributions.  You  must  ensure  that anyone named in the acknowledgments agrees to being so  named. 
-
-
-\subsection{References}
-Because all references  will be  linked electronically to the papers  they cite, proper formatting of the 
-references  is  crucial.  A  complete  reference  should  give  the  reader  enough  information  to  find  the relevant article. Please pay particular attention to spelling, capitalization and punctuation.
-References  to  unpublished  or  submitted  work,  unpublished  conference  presentations,  personal 
-communications,  patent  applications  and  patents  pending,  computer  software,  databases,  and 
-websites  should  be  referred  to  as  such  only  in  the  body  of  the  text.  These  should  be  kept  to  a minimum. The examples are as follows:\\
-(J. Smith, unpublished data),\\
-(J. Smith and P. Brown, submitted for publication),\\
-(J. Smith, personal communication),\\
-(J.  Smith  and  P.Brown,  presented  at  the  4th  Symposium  on  Speleology,  Overton,  IL,  13--15  June 1989),\\
-(J. C. Odell, April 1970, Process for batch culturing, U.S. patent 484,363,770),\\
-
-Published  or  accepted  ('in  press')  manuscripts,  books  and  book  chapters,  and  theses  should  be included  in  the  reference  list.  References  to  published  meeting  abstracts  should  be  kept  to  a minimum. For  all  references,  list  the  first  six  authors;  add  "et  al."  if  there  are  additional  authors.  Standard abbreviations   of   journal   names   according   to   Thomson   Scientific   should   be   used   (\url{http://ip-science.thomsonreuters.com/cgibin/jrnlst/jloptions.cgi?PC=master}). 
-
-Please use the following style for the reference list:
-
-\subsubsection{Published papers}
-{\noindent}[3]  Hunsche  U.,  Hampel  A.,  Rock  salt-the  mechanical  properties  of  the host  rock  material  for radioactive waste respiratory. Eng. Geol., 1999, 52, 271--291\\
-
-{\noindent}[22] Bezák V., Lexa J., Genetické typy ryolitových vulkanoklastík v okolí Žiaru nad Hronom [Genetic 
-types of rhyolite volcaniclastic rocks in the surroundings of Žiar nad Hronom],  Geologicke  Prace, Spravy, 1982, 79, 83--112 (in Slovak with English summary) 
-
-
-
-\subsubsection{Accepted papers}
-
-{\noindent}[5] Sippel J., Scheck-Wenderoth M., Reicherter K., Mazur S., Palaeostress states at the south-western margin  of  the  Central  European  Basin  System--application  of  fault-slip  analysis  to  unravel  a polyphase deformation pattern. Tectonophysics (in press), DOI: 10.1016/j.tecto.2008.04.010\\
-
-{\noindent}[15] Kereszturi G., Németh K., Structural and morphometrical irregularities of eroded scoria cones at 
-Bakony–Balaton Highland Volcanic Field, Hungary. Geomorphology, 2010, (in press)
-
-\subsubsection{Electronic journal articles}
-{\noindent}[1] García-Castellanos D., Vergés J., Gaspar-Escribano  J.,  Cloetingh  S.,  Interplay  between  tectonics, climate  and  fluvial  transport  during  the  Cenozoic  evolution  of  the  Ebro  Basin  (NE  Iberia):  from endorheic infill to exorheic erosion. J. Geophys. Res., 2003, 108 (B7), doi: 10.1029/2002JB002073\\
-
-{\noindent}[3]  Velinov  P.,  Mateev  L.,  Improved  cosmic  ray  ionization  model  for  the  system  ionosphere
--atmosphere.  Calculation  of  electron  production  rate  profiles.  J.  Atmos.  Solar-Terr. Phys.,  2008,  70, 574--582, DOI: 10.1016/j.jastp.2007.08.049
-
-
-
-\subsubsection{Books and book chapters}
-
-{\noindent}[11] Landau K.R., Lifshitz E.M., Theory of Elasticity. Pergamon Press, Oxford, 1986\\
-
-{\noindent}[15] Ramsay J.G., Folding and fractures of rocks. Mc GrawHill Book, New York, 1967\\
-
-{\noindent}[23] Kowallis B.J., Christiansen E.H., Blatter T.K., Keith J.D., Tertiary paleostress variation in time and 
-space  near  the  eastern  margin  of  the  Basin/Range  province,  Utah.  In:  Rossmanith  H.P  (Ed.), 
-Mechanics of Jointed and Faulted Rock. Balkema, Rotterdam, 1995, 297--302\\
-
-{\noindent}[36]  Harangi  S.,  Downes  H.,  Seghedi  I.,  Tertiary-Quaternary  subduction  processes  and  related 
-magmatism  in  Europe.  In:  Gee  D.G.,  Stephenson  R.A.  (Eds.),  European  Lithosphere  Dynamics. 
-Geological Society of London, London, 2006, 67--190
-
-\subsubsection{Theses}
-{\noindent}[16]  Nairn  I.A.,  Some  studies  of  the  geology,  volcanic  history  and  geothermal  resources  of  the Okataina  volcanic  centre,  Taupo  Volcanic  Zone,  New  Zealand.  PhD  thesis,  Victoria  University of Wellington, New Zealand, 1981\\
-
-
-{\noindent}[22] Brouard B., On the behavior of solution-mined caverns. PhD thesis, Ecole Polytechnique, France, 
-1988 (in French) 
-
-\subsubsection{Conference proceedings}
-
-
-{\noindent}[14] Fülöp A., Kovacs M., Pannonian acid volcanism in Gutâi Mts. (East Carpathians, Romania): 
-volcanological features, magmatological and tectonical Significance. In: Popov P. (Ed.), Plate tectonic 
-aspects of the alpine metallogeny in the Carpatho-Balkan region. Proceedings of the annual meeting UNESCO-IGCP Project 356, Sofia, 1996, 57--67\\
-
-{\noindent}[15]  Storini  M.,  Damiani  A.,  Effects  of  the  January  2005  GLE/SEP  events  on  minor  atmospheric components. In: Caballero R., D’Olivo J.C., Medina-Tanco G., Nellen L., Sánchez F.A., Valdés-Galicia J.F. (Eds.), Proceedings of the  30th International Cosmic Ray Conference, Merida (Y
-ucatan), Mexico. Universidad Nacional Autónoma de México, Mexico City, 2008, 1, 277--280
-
-\subsubsection{Newspaper articles}
-
-{\noindent}[18] Kluger J., Global warming heats up. Time Magazine, 26 March 2006, 1--7\\
-
-{\noindent}[29] Sherman L., How to calculate your carbon footprint. Forbes, 15 April 2008,18 
-
-\subsubsection{Maps}
-{\noindent}[78] Budai T., Csillag G., Dudko A., Koloszár L., Geological map of the Balaton Highland (1:50 000). 
-Magyar Állami Földtani Intézet, Budapest, Hungary, 1999\\ 
-
-{\noindent}[21]  Neall  V.E.,  Sheets  P19,  P20  and  P21 - New  Plymouth,  Egmont  and  Manaia.  Geologica
-l  Map  of New Zealand (1:50 000). Department of Scientific and Industrial Research, Wellington, New Zealand, 1979
-
-\subsubsection{Reports}
-{\noindent}[11]  Spiers  C.J.,  Peach  C.J.,  Brzesowsky  R.H.,  Schutjens  P.M.T.M.,  Liezenberg  J.L.,  Zwart  H.J.,  Long-term rheological and transport properties of dry and wet salt rocks. Nuclear Science and Technology, EUR 11848 EN, Office for Official Publications of the European Communities, Luxembourg, 1989\\
-
-{\noindent}[97]  Player,  R.A.  Salt  Plugs  Study.  Iranian  Oil  Operating  Companies,  Geological  and  Exploration Division, Tehran, Report No. 1146, 1969\\
-
-{\noindent}[38]  Lorenz  V.,  McBirney  A.R.,  Williams  H.,  An  investigation  of  volcanic  depressions.  Part  III.  Maars, tuffrings,  tuffcones  and  diatremes.  NASA  Progress  Report  (NGR-38-003,012),  Clearinghouse  for Federal Scientific and Technical Information, Springfield, Houston, 1970 
-
-\subsubsection{Websites}
-{\noindent}[13] IPCC Fourth Assessment Report: Climate Change, 2007 \url{http://www.ipcc.ch/publications_and_data/ar4/wg1/en/contents.html}
-
-References  should  be  listed  and  numbered  in  the  order  that  they  appear  in  the  text.  In  the  text, citations  should  be  indicated  by  the  reference  number  in  brackets  [1].  Multiple  citations  within  a single  set  of  brackets  should  be  separated  by  commas  [1,2].  Where  there  are  more  than  three sequential  citations,  they  should  be  given  as  a  range  [1-4].  References  in  figure  captions  and  tables should be listed after references in the text.
-
-
-
-\subsection{Figures and figure legends}
-
-Authors  may  use  photographs,  schemes,  diagrams,  line  graphs  and  bar  charts  to  illustrate  their findings.  Figures  included  with  online  submissions  should  be  suitable  for  onscreen  viewing  and desktop   printing.   High   resolution   images   should   be   provided   on   request   or   on   manuscript acceptance. The figures and their lettering should be clear and easy to read, e.g., no labels should be too  large  or  too  small.  Photomicrographs  should  include  a  scaled  bar  and  indicate  the  size.  We remind authors that it is not acceptable scientific conduct to modify any separate element within an image (adjustments of the entire image in brightness, contrast and color balance are justified only if they  do  not  misrepresent  the  original,  observed  data).  Composite  figures  composed  of  grouped images  such  as  insets  from  different  fields  or  separate  parts  of  gels must  be  explained  in  the  figure legend and differentiated by use of dividing lines or other means to make composites unambiguous. Figures  should  be  numbered  consecutively  using  Arabic  numerals  and  referred  to  in  the  text  by number.  Figure  legends  should  follow  the  main  text,  each  on  a  separate  page.  Each  figure  legend should   have   a   concise   title   and   should   provide   enough   information   so   that   the   figure   is understandable without frequent reference to the text. It should inform the reader of key aspects of the  figure,  but  the  figure  should  also  be  discussed  in the  text.  The  legend  should  be  succinct,  while still explaining all symbols and abbreviations. Avoid lengthy descriptions of methods.
-
-\subsection{Tables and table captions}
-
-
-Tables  must  include  enough  information  to  warrant  table  format  and  should  be  used  only  where information cannot be  presented in the text. Tables should be  typed as text, using either 'tabs' or a table editor for layout; please do not use graphics software to create tables. Tables occupying more than one printed page should be avoided, if possible; larger tables can be published as an appendix. 
-Do  not  use  picture  elements,  text  boxes,  tabs,  or  returns  in  tables.  Tables  that  contain  artwork,  chemical  structures,  or  shading  must  be  submitted  as  illustrations.  Tables  should  be  numbered  consecutively  using  Arabic  numerals  and  referred  to  in  the  text  by  number.  Table  legends  should  follow the main text, each on a separate page. Each table should have an explanatory caption which should be as concise as possible. The headings should be sufficiently clear so that the meaning of the 
-data is understandable without reference to the text. Footnotes can be used to explain abbreviations 
-but should  not  include  detailed  descriptions  of  the  experiment.  Citations  should  be  indicated  using 
-the same style as outlined above.
-
-\subsection{Equations}
-
-In-line equations should be typed as text. The use of graphics programs and 'equation editors' should be avoided. 
-
-
-\subsection{Abbreviations}
-
-
-Please  keep abbreviations to a minimum. Standard abbreviations of journal names according to the 
-ISI  standards  (see  \url{http://library.caltech.edu/reference/abbreviations/}).  Non-standard  abbreviations should  not  be  used  unless  they  appear  at  least  three  times  in  the  text.  List  all  non-standard abbreviations,  acronyms  and  symbols  in  alphabetical  order,  along  with  their  expanded  form,  at  the end of the text. Define them as well upon first use in the text.
-
-
-\subsection{Supplemental material}
-
-We encourage authors to submit essential supplementary files that additionally support the authors' 
-conclusions along with their manuscripts (the principal conclusions should be fully supported without 
-referral to the supplemental material). Supplemental material will always remain associated with its 
-article and is not subject to any modifications after publication. The decision to publish the material 
-with the article if it is accepted will be made by the Editor. Supporting files of no more than 10 MB in  may  be  submitted  in  a variety  of  formats,  but  should  be  publication-ready,  as  these  files  will  be published  exactly  as  supplied.  Material  must  be  restricted  to  large  or  complex  data  sets  or  results that  cannot  be  readily  displayed  because  of  space  or  technical  limitations.  Material  that  has  been published previously is not acceptable for posting as supplemental material.
-
-
-Supporting files should fall into one of the following categories: 
-\begin{itemize}
-\item Dataset 
-\item Additional Figure or Table 
-\item Text 
-\item Protocol 
-\item Multimedia-Audio/Video/Animations (AVI, MPEG, WAV, Quicktime, animated GIF or Flash) 
-\end{itemize}
-
-If the software required for users to view/use the supplemental material is not embedded in the file, 
-you  are  urged  to  use  shareware  or  generally  available/easily  accessible  programs.  To  prevent  any misunderstandings,  we  request  that  authors  submit  a  text  file  (instruction.txt)  containing  a  brief 
-instruction on how to use the files supplied. All supporting information should be  referred to in the 
-manuscript,  with  titles  (and,  if  desired,  legends)  for  all  files  listed  under  the  heading  'Supporting Information'. 
- 
- 
-\subsection{Nomenclature}
-We strongly recommend the use of correct and established nomenclature wherever possible. Always 
-report  numerical  data  (length,  weight,  and  volume)  in  the  appropriate  SI  units. 
-
-
-\subsection{Formatting and typesetting}
-
-All  pages  must  be  numbered  consecutively.  The  whole  text  (including  legends,  footnotes,  and 
-references) should be  formatted double-spaced with no hyphenation and automatic word-wrap (no hard  returns  within  paragraphs).  Please  type  your  text  consistently,  e.g.  take  care  to   distinguish between '1' (one), 'I' (capital I) and 'l' (lower-case L) and '0' (zero) and 'O' (capital O), etc. Manuscript pages should have line numbers. The font size should be no smaller than 12 points. 
-
-Footnotes   and   endnotes   should   be   avoided.   Allowable   footnotes/endnotes   may   include:   the  designation of the corresponding author of the  paper, the current address of an author (if different 
-from that shown in the affiliation), abbreviations and acronyms. 
-
-Do  not  create  symbols  as  graphics  or  use  special  fonts  that  are  external  to  your  word  processing program; use the "insert symbol" function. Indicate paragraph lead-ins in bold type and italicize any words that should appear in italics. All Latin names should be italicized, including species names and  common structures such as: et al.; in vivo; in vitro; ex vivo; in silico; etc.; de novo; a priori; ab initio; vice  versa;  in  situ;  ad  hoc;  sensu  stricto;  i.e.;  ca.  /circa;  n.b.  /nota  bene.  Decimal  multiples  or submultiples  of  units  are  indicated  by  the  use  of  prefixes.  There  should  be  a  single  space  between most units and the corresponding number; the only exceptions are: 1\%, 1‰, 1°C, 1°, 1', 1".
-
-
-\section{Distribution of materi als and data}
-
-
-The publication of an article in the journal is subject to the understanding that authors will make all 
-data  and  associated  protocols  available  to  readers  on  request.  The  Methods  section  should  include details  of  how  materials  and  information may  be  obtained.  In  cases  of  dispute,  authors  may  be required to make any primary data available to the Managing Editor. 
-
-
-\section{Copyright}
-
-All authors retain copyright, unless -- due to their local circumstances -- their work is not copyrighted. The  noncommercial  use  of  each  article  will  be  governed  by  the  Creative  Commons  Attribution-NonCommercial-NoDerivs  license.  The  corresponding  author  grants  De  Gruyter  Open  the  exclusive license  to  commercial  use  of  the  article,  by  signing  the  License  to  Publish.  Scanned  copy  of  license should be sent by e-mail to the Editor of the journal, as soon as possible.
-
-\section{Outline of the production process}
-
-Once  an  article  has  been  accepted  for  publication,  the  manuscript  files  are  transferred  into  our production system to be language-edited and formatted. Language and technical editors reserve the privilege  of  editing  manuscripts  to  conform  with  the  stylistic  conventions  of  the  journal.  Once  the article has been typeset, PDF proofs are generated so that authors can approve all editing and layout. 
-
-\subsection{Electronic proofs}
-
-Proofreading  should  be  carried  out  once  a  final  draft  has  been  produced.  Since  the  proofreading  stage is the last opportunity to correct the article to be published, the authors are requested to make  every  effort  to  check  for  errors  in  their  proofs  before  the  paper  is  posted  online.  Please  note  that only  essential  changes  can  be  made  at  this  stage  and  extensive  corrections,  additions,  or  deletions  will not be allowed. Limit changes to correction of spelling errors, incorrect data,  grammatical errors, and updated information for references to articles that have been submitted or are in press. If URLs  have  been  provided  in  the  article,  recheck  the  sites  to  ensure  that  the  addresses  are  still  accurate and the material that you expect the reader to find is indeed there. Important new information that  has  become  available  between  acceptance  of  the  manuscript  and  receipt  of  the  proofs  may  be inserted into the proof with the permission of the editor. Additionally,  authors  may  be  asked  to  address  remarks  and  queries  from  the  language  and/or technical  editors.  Queries  are  written  only  to  request  necessary  information  or  clarification  of  an unclear  passage  or  to  draw  attention  to  edits  that  may  have  altered  the  sense.  Please  note  that language/technical  editors  do  not  query  at  every  instance  where  a change  has been  made.  It  is  the author's  responsibility  to  read  the  entire  text,  tables,  and  figure  legends,  not  just  items  queried.  Major alterations made will always be submitted to the authors for approval. 
-
-Manuscripts  submitted  under  multiple  authorship  are  published  on  the  assumption  that  the final version of the manuscript has been seen and approved by all authors. The Corresponding author will  receive e-mail notification when a downloadable PDFfile is available and should return comments on the proofs within a maximum of 3 days of receipt. Comments should be e-mailed to Managing Editor. Please  note  that  they  should  not  be  faxed,  nor  mailed  or  sent  by  a  courier  service  to  the  Editorial Office.
-
+%=====================================
+% References: external bibliography
+%=====================================
+\bibliographystyle{plainnat}
+\bibliography{Panama.bib}
+%\nocite{*} 
 
 \end{document}
