@@ -4,6 +4,7 @@
 %\RequirePackage[no-math]{fontspec}%(only for the luatex or the xetex engine)
 \usepackage[big]{dgruyter}
 \usepackage{float}
+\usepackage{tabularx}
 \begin{document}
  
 
@@ -13,9 +14,9 @@
 
   \affil[1]{Université Libre de Bruxelles, École polytechnique de Bruxelles (EPB, Brussels Faculty of Engineering), Laboratory of Image Synthesis and Analysis, Building L, Campus de Solbosch CP131/3, Avenue Franklin D. Roosevelt 50, B-1050, Brussels, Belgium, E-mail: polina.lemenkova@ulb.be}
 
-  \title{\huge Gravity and seismicity in the Gulf of Panama mapped by the GMT scripts}
+  \title{\huge Earth gravity, geoid and seismicity data in the Gulf of Panama mapped by GMT scripts}
 
-  \runningtitle{Gravity and seismicity in the Gulf of Panama mapped by the GMT scripts}
+  \runningtitle{Earth gravity, geoid and seismicity data in the Gulf of Panama mapped by GMT scripts}
 
   %\subtitle{...}
 
@@ -137,7 +138,7 @@ One can note here that the lines of code can be broken into a series of commands
 Modelling complex topographic surfaces in enabled by GMT through 3D perspective mesh-models, plots and geographic maps. This is useful to illustrate the shapes of the terrain for detailed geomorphological and bathymetric analysis. Therefore, the advanced data processing step included 3D modelling using GMT-style syntax. The procedure of clipping the data to insert a small global map in Figure \ref{fig:01} was used by 'psclip' module (gmt psclip -R276.5/283/6.5/10.5  -JM6.0i pa.txt -O -K >> \$ps) to visulized the location of Panama within the global context by the Digital Chart of the World (DCW), and to highlight the study area overlaid upon the semi-translucent image of the neighboring countries. For plotting coastal lines and borders of the countries, the 'pscoast' module was used as follows: 'gmt pscoast -R -J -Ia/thinner,blue -Na -N1/thicker,darkred -W0.1p -Df -O -K >> \$ps'. 
 
 \subsubsection{Spatial analysis}
-To account for complex variables (free-air gravity, geodetic data), we present an integration method of plotting data in identical cartographic projection, for comparability, and to improve the efficiency of the visualization of data with different resolution and sources. Specifically, by representing geographical and geophysical  phenomena on each maps from the series, we derive information regarding the level of seismicity in the surrounding areas, to visualise the most vulnerable areas. We show though the comparison of presented maps that the GMT script-based method performed well for generating a series of the thematic mapping covering coastal regions, such as Panama.
+To account for complex variables (free-air gravity, geodetic data), we present an integration method of plotting data in identical cartographic projection, for comparability, and to improve the efficiency of the visualization of data with different resolution and sources. 
 
 \begin{figure}[H]
 \begin{center}
@@ -147,6 +148,7 @@ To account for complex variables (free-air gravity, geodetic data), we present a
 \label{fig:03}
 \end{figure}
 
+Specifically, by representing geographical and geophysical  phenomena on each maps from the series, we derive information regarding the level of seismicity in the surrounding areas, to visualise the most vulnerable areas. We show though the comparison of presented maps that the GMT script-based method performed well for generating a series of the thematic mapping covering coastal regions, such as Panama.
 To investigate spatial variations of the earthquake events, the ‘psxy’ module of GMT was used for visualization of the events. Technically, the procedure was performed by reading the (x,y,z) triplets derived from the file in .ngdc format and visualized by the code that plots symbols at the coordinate locations, as follows: ‘gmt psxy -R -J quakes\_PA\_s.ngdc -Wfaint -i4,3,6,6s0.05 -h3 -Scc -Csteps.cpt -O -K >> \$ps’. The earthquake events were plotted using the '-Sc' flag that visualises circles with the size given as the diameter of the circle signifying the magnitude of the earthquake. The specification of the code was applied from the GMT manual, and the IRIS file was visualized as the converted table (.ngdc), to determine all the earthquakes. The magnitude and spatial variability of the earthquakes was indicated in the ‘-i4,3,6,6s0.05’ flag that signifies the numbers of columns in the table with the following names, respectively: Year, Month, Day, Lat, Lon, Depth, Mag. 
 
 \subsubsection{Advantages and robustness}
@@ -229,10 +231,29 @@ First, the data-driven mapping requires rapid and automated data processing that
 
 Second, this study relies upon the most reputable seismic database from IRIS, which is being updated regularly using the data from multiple seismic stations worldwide. IRIS is using the generated reports with standardised model of data capture and comprehensive metadata: event earthquake frequency, depth, magnitude, precise coordinates and description of locations. The data were downscaled to the regional level of Panama in this study. 
 
+Third, this article presents a series of the six new maps in the identical scale and compatible cartographic projections, which ensures comparison of maps. Therefore, the maps can be reused in future similar studies. The maps were plotted by the GMT scripts using the automated scripting approach that ensures high print quality and accuracy of maps, prepared using the high-resolution data. Rather than using handmade cartographic workflow as in similar GIS-based studies, the GMT scripting presents the improved methodology that emphasises the importance of programming as a new trend in contemporary cartography.
+
+\section{Abbreviations}
+%\noindent 
+\begin{tabular}{ | l | l | }
+GMT & Generic Mapping Tools \\
+DOC & Dissolved Organic Carbon \\
+IRIS & Incorporated Research Institutions for Seismology \\
+EGM & Earth Gravitational Model \\
+GEBCO & General Bathymetric Chart of the Oceans \\ 
+CSV & Comma-Separated Values \\
+GDAL & Geospatial Data Abstraction Library \\
+GIS & Geographic Information System \\
+RGB & Red-Green-Blue \\
+DCW & Digital Chart of the World \\
+\hline
+\end{tabular}
+
 %=====================================
 % References: external bibliography
 %=====================================
-\bibliographystyle{plainnat}
+\bibliographystyle{IEEEtran}
+%\bibliographystyle{plainnat}
 \bibliography{Panama.bib}
 %\nocite{*} 
 
