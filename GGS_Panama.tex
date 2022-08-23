@@ -99,6 +99,56 @@ The interplay between the geochemical and geologic setting and terrestrial and o
 
 At the same time, Panama is an environmentally vulnerable region. It includes precious mangrove estuaries exposed to the environmental effects from land and sea, with the high degree of connectivity between the coastal and terrestrial ecosystems \cite{Valiela}. Forested mountains in western Panama (Figure \ref{fig:02}) provide sources of water, materials for agriculture, and industry, and hydroelectric energy \cite{Larsen}. Mangroves are one of the most productive ecosystems in the world, providing existence for coastal livelihoods \cite{LopezAngarita}. Marine protected areas of Panama include rare species, benthic and fish communities and resources, e.g., Las Perlas Archipelago \cite{Mair}. Natural ecosystems are linked with regional topography and climate setting and experience the effects from the geophysical processes \cite{Benfield,Lee,Lemenkova202018,Ruane,Lemenkova202206,Klauco2013,Lemenkova202140}. For instance, the example of the climate effects on coastal ecosystems is given by \cite{Sadatzki} who noted phytoplankton blooms during seasonal coastal upwelling that affected the growth rate of the species. Geochemical studies in Panama identified earlier the contribution of dissolved organic carbon (DOC) to the oceans from the mountainous rivers, which illustrates the influence of lithology and topography on the environment. The correlations between land cover, bedrock lithology and marine sedimentation in the shelf show associations \cite{Goldsmith}.
 
+\section{Methodology}
+
+GIS are standard tools for cartographic visualization in a variety of applications in environmental sciences, e.g., forest conservation and deforestation, mapping landscapes and protected zones, marine mapping, geologic research, etc. \cite{Harper,Pelletier,Lemenkova202135,Rucker}. However, the limitations of mapping in the traditional GIS are essential, due to the lack of automation in data processing. Besides, an open problem in the existing commercial GIS is data format handling. In contrast, scripting methods of cartographic approach present more in-depth ways of data processing and visualization \cite{1405673,Lemenkova202213}. Scripting ensures effective solution to automation in data processing. It can efficiently and rapidly manipulate with a wide range of geographic datasets and materials, including both vector and bitmap data. In this study, we present the application of GMT, which is an effective cartographic tool. It a significant advantage over the conventional GIS as a machine-based mapping method in cartography. This is largely explained by its scripting functionality that differs significantly from the traditional GIS. 
+
+\subsection{Data}
+The following data were used for mapping. The IRIS seismological data from 1740 records (http://ds.iris.edu/ds/nodes/dmc/data/) have been collected as CSV table covering 40 years (1970-2021). These seismic events are located around the Panama coastline and vary according to their magnitude, depth of earthquake focus, precise date and time of event and coordinate location. The topographic data used as a basis map for Figure \ref{fig:01} and Figure \ref{fig:04} are from the GEBCO \cite{GEBCO,Schenke2016} and ETOPO1 grid \cite{Amante} used for 3D model in Figure \ref{fig:02}. The geoid data were downloaded from EGM-2008 \cite{Pavlis}. Gravity anomalies (Figures \ref{fig:05} and \ref{fig:06}) were taken from the remote sensing based observations available from Scripps Institution of Oceanography based on the CryoSat-2 and Jason-1 satellite observations \cite{Sandwell}. These data were imported into the GMT environment for processing. Apart from these layers, we used the built-in data of world coastlines, riverine networks, state boundaries and polygons of countries which available from the integration of GMT with DCW.
+
+\subsection{Generic Mapping Tools} 
+
+\subsubsection{Scripting approach}
+
+The scripting approach of GMT builds upon command line arguments required by each module of GMT. By changing the options of commands in GMT, mapping can be performed semi-automatically for similar layouts, which includes the repeatability of scripts. Thus, in this study, the GMT was used for 2D and 3D mapping \cite{Wessel} using scripts for plotted six maps available in the author's GitHub public repository with open access: \href{https://github.com/paulinelemenkova/Mapping_Panama_GMT_Scripts}{https://github.com/paulinelemenkova/Mapping\_Panama\_GMT\_Scripts}. The scripts were written using the XCode and then run from the console of the GMT. The metadata of the spatial datasets were carefully checked and then data were visualized by GMT in the Mercator projection for comparability reasons. 
+
+\subsubsection{Data processing}
+
+Apart from basic geographic data manipulation, we used available GMT raster data processing tools , including subsetting and raster gridding. The cartographic projecting was selected from the available 31 projections, adjustable for the study region of Panama, using the -J flag. For example, to examine the elevation component in the topographic records, this study used the GDAL-based option in the 'gdalinfo' utility. To visualize raster grids and to add contour lines (isolines), this study applied the following modules of the GMT: ‘gmt grdimage pa\_relief.nc -Cpauline.cpt -R276.5/283/6.5/10.5  -JM6.0i -P -I+a15+ne0.75 -t30 -Xc -K > \$p’, and the ‘gmt grdcontour pa\_relief1.nc -R -J -C200 -W0.1p -O -K >> \$ps’. 
+
+The isolines of the geoid curvature are notably curved. according to the topographic elevations, as can be noted in Figure \ref{fig:03}. For the case ofgeoid, the isolines were plotted every 0.5 m. It is shown that the isolines of the gravity anomalies and gradient gravity grid curvatures (Figures \ref{fig:05} and \ref{fig:06}) form a set of curved lines on the maps, which well correspond to the topographic elevations and oceanic depression in the margins of the Gulf of Panama and the continental slope of the Caribbean Sea.  
+
+Subsetting data from the raw dataset is particularly useful in case of big data (millions of cells, Gb of size), where spatial extent is well known beforehand. For this procedure, this study used the GMT module: 'gmt grdcut GEBCO\_2019.nc -R276.5/283/6.5/10.5  -Gpa\_relief.nc'. Here the ‘-R’ flag signifies that the study extent in the west-east-south-north (WESN) convention: ‘-R276.5/283/6.5/10.5’ (0 to 360° from W to E, 0 to 90° from S to N). 
+
+\subsubsection{Data visualization}
+A highly adjustable tools of GMT enable to perform print-quality maps and graphical illustrations through a large variety of color palette tables (CPTs), lines and polygons. Thus, the legends of color palette scales on the maps determine possible range interval for the data extent, within which the variations of the data extension can be observed (Figure \ref{fig:01} to \ref{fig:06}), and define the concentration and distribution of the extreme values of the geoid undulations, geophysical grids and seismic magnitude with respect to the topography of the country. The example of the legend (here for the topographic map in Figure \ref{fig:01}) in GMT script is as follows: ‘gmt psscale -Dg276.5/6.05+w15.3c/0.4c+h+o0.0/0i+ml -R -J -Cpauline.cpt -Bg500a500f50+l"Color scale 'wiki-celtic-sea': ... [R=-3954/2426, discrete, RGB, 25 segments]" -I0.2 -By+lm -O -K >> \$ps’. 
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.99\linewidth]{figures/fig_02.jpg} 
+\end{center}
+\caption{3D data modelling using GMT scripting: topographic relief of Panama and coastal bathymetry. Map source: author.}
+\label{fig:02}
+\end{figure}
+
+One can note here that the lines of code can be broken into a series of commands with options. Thus, the most important line of code have the following meaning. The ‘-Bg500a500f50’ flag controls the frequency, annotation, tick, and gridline interval for the color legend; the ‘-Dg276.5/6.05’ defines the reference start point on the map for the color scale using the the ‘-Dg’ for map coordinates (in this cases: Mercator projections); the ‘-I0.2’ flag adds the illumination effects; the ‘-Cpauline.cpt ’ defines the selected color palette, which was pre-defined using the previous command: ‘gmt makecpt -Cwiki-celtic-sea.cpt > pauline.cpt’.
+
+\subsubsection{Data modelling}
+Modelling complex topographic surfaces in enabled by GMT through 3D perspective mesh-models, plots and geographic maps. This is useful to illustrate the shapes of the terrain for detailed geomorphological and bathymetric analysis. Therefore, the advanced data processing step included 3D modelling using GMT-style syntax. The procedure of clipping the data to insert a small global map in Figure \ref{fig:01} was used by 'psclip' module (gmt psclip -R276.5/283/6.5/10.5  -JM6.0i pa.txt -O -K >> \$ps) to visulized the location of Panama within the global context by the Digital Chart of the World (DCW), and to highlight the study area overlaid upon the semi-translucent image of the neighboring countries. For plotting coastal lines and borders of the countries, the 'pscoast' module was used as follows: 'gmt pscoast -R -J -Ia/thinner,blue -Na -N1/thicker,darkred -W0.1p -Df -O -K >> \$ps'. 
+
+\subsubsection{Spatial analysis}
+To account for complex variables (free-air gravity, geodetic data), we present an integration method of plotting data in identical cartographic projection, for comparability, and to improve the efficiency of the visualization of data with different resolution and sources. Specifically, by representing geographical and geophysical  phenomena on each maps from the series, we derive information regarding the level of seismicity in the surrounding areas, to visualise the most vulnerable areas. We show though the comparison of presented maps that the GMT script-based method performed well for generating a series of the thematic mapping covering coastal regions, such as Panama.
+
+\begin{figure}[H]
+\begin{center}
+	\includegraphics[width=0.99\linewidth]{figures/fig_03.jpg} 
+\end{center}
+\caption{Geoid undulations visualised using GMT console scripting. Map source: author.}
+\label{fig:03}
+\end{figure}
+
+To investigate spatial variations of the earthquake events, the ‘psxy’ module of GMT was used for visualization of the events. Technically, the procedure was performed by reading the (x,y,z) triplets derived from the file in .ngdc format and visualized by the code that plots symbols at the coordinate locations, as follows: ‘gmt psxy -R -J quakes\_PA\_s.ngdc -Wfaint -i4,3,6,6s0.05 -h3 -Scc -Csteps.cpt -O -K >> \$ps’. The earthquake events were plotted using the '-Sc' flag that visualises circles with the size given as the diameter of the circle signifying the magnitude of the earthquake. The specification of the code was applied from the GMT manual, and the IRIS file was visualized as the converted table (.ngdc), to determine all the earthquakes. The magnitude and spatial variability of the earthquakes was indicated in the ‘-i4,3,6,6s0.05’ flag that signifies the numbers of columns in the table with the following names, respectively: Year, Month, Day, Lat, Lon, Depth, Mag. 
+
 %=====================================
 % References: external bibliography
 %=====================================
